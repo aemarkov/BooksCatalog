@@ -3,21 +3,21 @@
 namespace BooksCatalog.Models
 {
     /// <summary>
-    /// Модель книги
+    /// Book model
     /// </summary>
     public class Book
     {
         public int Id { get; set; }
 
         /// <summary>
-        /// Название книги
+        /// Book's title
         /// </summary>
         [Required]
         [MaxLength(60)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Категория
+        /// Book's category
         /// </summary>
         public virtual Category Category { get; set; }
         public int CategoryId { get; set; }

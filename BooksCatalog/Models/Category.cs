@@ -6,7 +6,7 @@ using System.Web;
 namespace BooksCatalog.Models
 {
     /// <summary>
-    /// Категория книг
+    /// Category of books
     /// </summary>
     public class Category
     {
@@ -18,12 +18,12 @@ namespace BooksCatalog.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// Название категории
+        /// Name of the category
         /// </summary>
         public string CategoryName { get; set; }
 
         /// <summary>
-        /// Книги в этой категории
+        /// List of books in this category
         /// </summary>
         public virtual ICollection<Book> Books { get; set; } 
     }
