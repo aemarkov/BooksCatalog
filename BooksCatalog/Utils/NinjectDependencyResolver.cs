@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using AutoMapper;
 using BooksCatalog.Infrastructure;
 using Ninject;
 
@@ -25,6 +26,7 @@ namespace BooksCatalog.Utils
         private void AddBindings()
         {
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            kernel.Bind<IMapper>().ToConstant(AutoMapperConfig.Config());
         }
     }
 }

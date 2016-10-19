@@ -5,7 +5,7 @@ namespace BooksCatalog.Models
     /// <summary>
     /// Book model
     /// </summary>
-    public class Book
+    public class Book:IModel
     {
         public int Id { get; set; }
 
@@ -13,7 +13,7 @@ namespace BooksCatalog.Models
         /// Book's title
         /// </summary>
         [Required]
-        [MaxLength(60)]
+        [MaxLength(300)]
         public string Title { get; set; }
 
         /// <summary>

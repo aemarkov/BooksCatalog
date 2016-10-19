@@ -8,7 +8,7 @@ namespace BooksCatalog.Models
     /// <summary>
     /// Category of books
     /// </summary>
-    public class Category
+    public class Category:IModel
     {
         public Category()
         {

@@ -1,10 +1,13 @@
-﻿<div class="book-card">
+﻿@model BooksCatalog.Models.Book
+
+
+<div class="book-card">
     <img class="book-card-image" src="http://img0.joyreactor.cc/pics/post/картинки-смешные-надписи-продолжение-в-комментах-темная-сторона-160612.jpeg" />
     <div class="card-content">
         <div class="book-card-title">
-            <b>С. П. Уманский</b>
-            <div>Проблемы выбора отхожих мест на планетах с низкой гравитацией</div>
+            <b></b>
+            <div>@Model.Title</div>
         </div>
-        <a class="btn btn-default" href="">Подробнее</a>
+        <a class="btn btn-default" href="@Url.Action("Details","Books",new {bookId=Model.Id})">Подробнее</a>
     </div>
 </div>
