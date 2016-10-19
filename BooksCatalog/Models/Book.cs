@@ -21,5 +21,10 @@ namespace BooksCatalog.Models
         /// </summary>
         public virtual Category Category { get; set; }
         public int CategoryId { get; set; }
+
+        /// <summary>
+        /// Book's image
+        /// </summary>
+        public byte[] Image { get; set; }
     }
 }

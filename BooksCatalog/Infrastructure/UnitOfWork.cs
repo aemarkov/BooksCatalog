@@ -10,7 +10,7 @@ namespace BooksCatalog.Infrastructure
         private BooksContext _context;
         private Dictionary<Type, object> _repositories;
 
-        UnitOfWork()
+        public UnitOfWork()
         {
             _context = new BooksContext();
             _repositories = new Dictionary<Type, object>();

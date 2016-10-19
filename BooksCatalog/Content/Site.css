@@ -22,3 +22,80 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* sidebar menu */
+.sidebar
+{
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: #f5f5f5;
+    height: 100%;
+
+    border: 1px solid #eeeeee;
+}
+
+.sidebar .title
+{
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar .nav-button
+{   
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+
+    text-decoration:none;
+}
+
+.sidebar .nav-button:hover
+{
+    background-color: #C5CAE9;
+}
+
+.sidebar .nav-button:active
+{
+    background-color: #9FA8DA;
+}
+
+/*
+   Card for books index
+*/
+
+.book-card
+{
+    display: inline-block;
+    width: 280px;
+    background-color: #FFF;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    text-align: center;
+
+    margin: 10px;
+}
+
+.book-card-title
+{
+    text-align: left;
+    margin: 0 0 10px 0;
+}
+
+.card-content
+{
+    padding: 10px;
+}
+
+.book-card-image
+{
+    width: 280px;
+}

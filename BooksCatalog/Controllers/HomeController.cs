@@ -8,6 +8,11 @@ namespace BooksCatalog.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(IUnitOfWork uow)
+        {
+            
+        }
+
         public ActionResult Index()
         {
             return View();
