@@ -41,7 +41,10 @@ namespace BooksCatalog.Controllers
             var books = _booksRepository.Entities.Where(x => x.CategoryId == id).ToList();
             var category = _categoryRepository.GetById(id);
 
-            //TODO: обработка ошибок отсутствия категории
+            //Category not found
+            if(category==null)
+                throw new HttpException(404,"Not found");
+
             var menuItems = GetCategoriesMenuItems();
 
             return View("Index", new BooksListViewModel() { Books = books, MenuItems = menuItems, CategoryName = category.CategoryName});

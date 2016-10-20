@@ -4,10 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-@Html.Partial("SidbarPartial",new SideMenuViewModel() {MenuItems = Model.MenuItems, MenuTitle = "Категории"})
+@Html.Partial("SidebarPartial",new SideMenuViewModel() {MenuItems = Model.MenuItems, MenuTitle = "Категории"})
 <div class="container">
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
-        @Url.Action("Category", "Books", new {id=1})
         <h1 class="page-header">
             @if (Model.CategoryName != null)
             {
@@ -15,7 +14,7 @@
             }
             else
             {
-                <span>Все категории</span>
+                <span>Все книги</span>
             }
             </h1>
 

@@ -3,6 +3,9 @@ using BooksCatalog.ViewModels;
 
 namespace BooksCatalog.Helpers
 {
+    /// <summary>
+    /// Helper for side menu button
+    /// </summary>
     public static class SidebarHelpers
     {
         public static MvcHtmlString MenuButton(this HtmlHelper htmlHelper, SideMenuItemViewModel viewModel)

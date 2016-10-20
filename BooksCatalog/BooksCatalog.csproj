@@ -157,6 +157,14 @@
     <Compile Include="Controllers\BooksEditController.cs" />
     <Compile Include="Controllers\CategoriesEditController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Errors\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,12 +196,14 @@
     <Compile Include="Utils\AutoMapperConfig.cs" />
     <Compile Include="Utils\NinjectDependencyResolver.cs" />
     <Compile Include="ViewModels\BooksListViewModel.cs" />
+    <Compile Include="ViewModels\EditBookViewModel.cs" />
     <Compile Include="ViewModels\SideMenuItemViewModel.cs" />
     <Compile Include="ViewModels\SideMenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Errors\404.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -227,7 +237,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
-    <Content Include="Views\Shared\SidbarPartial.cshtml" />
+    <Content Include="Views\Shared\SidebarPartial.cshtml" />
     <Content Include="Views\Shared\SidebarButtonPartial.cshtml" />
     <Content Include="Views\Shared\BookCardPartial.cshtml" />
     <Content Include="Views\BooksEdit\Index.cshtml" />
@@ -243,6 +253,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
+    <Folder Include="Views\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

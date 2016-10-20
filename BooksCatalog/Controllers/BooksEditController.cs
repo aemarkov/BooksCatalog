@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -44,6 +45,7 @@ namespace BooksCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
+                uploadImage(book);
                 _booksRepository.Insert(book);
                 return RedirectToAction("Index");
             }
@@ -58,7 +60,10 @@ namespace BooksCatalog.Controllers
         {
             var book = _booksRepository.GetById(id);
 
-            //TO
+            //Book not found
+            if (book == null)
+                throw new HttpException(404, "Not found");
+
             loadCategories();
             return View(book);
         }
@@ -69,6 +74,7 @@ namespace BooksCatalog.Controllers
         {
             if (ModelState.IsValid)
             {
+                uploadImage(book);
                 _booksRepository.Update(book);
                 return RedirectToAction("Index");
             }
@@ -82,7 +88,10 @@ namespace BooksCatalog.Controllers
         {
             var book = _booksRepository.GetById(id);
 
-            //TODO: проверка отсутствия записи
+            //Book not found
+            if (book == null)
+                throw new HttpException(404, "Not found");
+
             _booksRepository.Delete(book);
 
             return RedirectToAction("Index");
@@ -96,6 +105,23 @@ namespace BooksCatalog.Controllers
                _categoryRepository.OrderByName().Select(x => new SelectListItem() { Text = x.CategoryName, Value = x.Id.ToString() }).ToList();
 
             ViewBag.CategoriesSelectList = categories;
+        }
+
+        //Upload image and save to db
+        private void uploadImage(Book book)
+        {
+            if (Request.Files.Count > 0)
+            {
+                var file = Request.Files[0];
+
+                using (var ms = new MemoryStream())
+                {
+                    file.InputStream.CopyTo(ms);
+                    book.Image = ms.GetBuffer();
+                }
+
+            }
+
         }
     }
 }

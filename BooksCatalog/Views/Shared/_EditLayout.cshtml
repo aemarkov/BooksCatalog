@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.Partial("SidbarPartial", new SideMenuViewModel() {MenuItems = 
+@Html.Partial("SidebarPartial", new SideMenuViewModel() {MenuItems = 
     new[] { new SideMenuItemViewModel("Книги", "Index", "BooksEdit"), new SideMenuItemViewModel("Категории", "Index", "CategoriesEdit")},
     MenuTitle = "Разделы"})
 <div class="container">

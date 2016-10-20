@@ -49,7 +49,10 @@ namespace BooksCatalog.Controllers
         {
             var category = _categoryRepository.GetById(id);
 
-            //TODO: Обработка отсутствия записи
+            //Category not found
+            if (category == null)
+                throw new HttpException(404, "Not found");
+
             return View(category);
         }
 
@@ -71,7 +74,10 @@ namespace BooksCatalog.Controllers
         {
             var category = _categoryRepository.GetById(id);
 
-            //TODO: проверка отсутствия записи
+            //Category not found
+            if (category == null)
+                throw new HttpException(404, "Not found");
+
             _categoryRepository.Delete(category);
 
             return RedirectToAction("Index");

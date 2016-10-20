@@ -166,3 +166,30 @@ input
 {
     color: #F00;
 }
+
+.book-image
+{
+    max-width: 300px;
+    margin: 10px 0 10px 0;
+}
+
+/* Custom error pages */
+.error-block
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+
+    transform:translate(-50%,-50%);
+}
+
+.error-code
+{
+    font-size: 100pt;
+}
+
+.error-description
+{
+    font-size: 30pt;
+}

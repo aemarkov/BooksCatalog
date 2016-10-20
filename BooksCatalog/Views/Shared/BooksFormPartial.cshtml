@@ -11,3 +11,19 @@
         <td>@Html.DropDownListFor(x => x.CategoryId, ViewBag.CategoriesSelectList as IEnumerable<SelectListItem>)</td>
     </tr>
 </table>
+
+<div>
+    <h4>@Html.LabelFor(x => x.Image)</h4>
+    @if (Model != null)
+    {
+        <img class="book-image" src="@Url.Action("show", "images", new {id = Model.Id})"/>
+    }
+    else
+    {
+        <img class="book-image" src="@Url.Action("show", "images")" />
+    }
+</div>
+Загрузить:
+<input type="file" name="HttpPostedImage"/>
+<br/>
+

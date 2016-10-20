@@ -9,7 +9,7 @@ namespace BooksCatalog.Infrastructure
     /// </summary>
     public abstract class Repository<T>:IRepository<T> where T: class, IModel
     {
-        private BooksContext _context;
+        protected BooksContext _context;
 
         public Repository()
         {
@@ -40,7 +40,7 @@ namespace BooksCatalog.Infrastructure
         /// </summary>
         /// <param name="id">Entity id</param>
         /// <returns></returns>
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             return _context.Set<T>().FirstOrDefault(x => x.Id == id);
         }
@@ -49,7 +49,7 @@ namespace BooksCatalog.Infrastructure
         /// Insert new entity to DB
         /// </summary>
         /// <param name="entity">new entity</param>
-        public void Insert(T entity)
+        public virtual void Insert(T entity)
         {
             _context.Set<T>().Add(entity);
             _context.SaveChanges();
@@ -59,7 +59,7 @@ namespace BooksCatalog.Infrastructure
         /// Update existing model
         /// </summary>
         /// <param name="entity">updated entity</param>
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified;
             _context.SaveChanges();
@@ -69,7 +69,7 @@ namespace BooksCatalog.Infrastructure
         /// Remove entity
         /// </summary>
         /// <param name="entity"></param>
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             _context.Entry(entity).State= EntityState.Deleted;
             _context.SaveChanges();
