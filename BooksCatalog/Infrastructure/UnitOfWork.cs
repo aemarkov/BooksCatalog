@@ -7,8 +7,8 @@ namespace BooksCatalog.Infrastructure
 {
     public class UnitOfWork:IUnitOfWork
     {
-        private BooksContext _context;
-        private Dictionary<Type, object> _repositories;
+        //Old realisation for generic repository
+        /*private Dictionary<Type, object> _repositories;
 
         public UnitOfWork()
         {
@@ -27,6 +27,32 @@ namespace BooksCatalog.Infrastructure
             }
 
             return (IRepository<T>) _repositories[type];
+        }*/
+
+        private BooksContext _context;
+        private BooksRepository _booksRepository;
+        private CategoriesRepository _categoriesRepository;
+
+        public UnitOfWork()
+        {
+            _context = new BooksContext();         
+        }
+
+        /// <summary>
+        /// Returns books repository
+        /// </summary>
+        public IRepository<Book> BooksRepository
+        {
+            get { return _booksRepository ?? (_booksRepository = new BooksRepository(_context)); }
+        }
+
+        /// <summary>
+        /// Returns categories repository
+        /// </summary>
+        public IRepository<Category> CategoryRepository
+        {
+            get { return _categoriesRepository ?? (_categoriesRepository = new CategoriesRepository(_context)); }
+            
         }
     }
 }

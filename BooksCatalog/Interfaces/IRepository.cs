@@ -16,6 +16,11 @@ namespace BooksCatalog
         IQueryable<T> Entities { get;}
 
         /// <summary>
+        /// Returns ordered by name entities
+        /// </summary>
+        IQueryable<T> OrderByName();
+
+            /// <summary>
         /// Find entity with specific id
         /// </summary>
         /// <param name="id">Entity id</param>

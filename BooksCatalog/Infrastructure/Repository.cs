@@ -7,7 +7,7 @@ namespace BooksCatalog.Infrastructure
     /// <summary>
     /// Provides method for working with entities
     /// </summary>
-    public class Repository<T>:IRepository<T> where T: class, IModel
+    public abstract class Repository<T>:IRepository<T> where T: class, IModel
     {
         private BooksContext _context;
 
@@ -29,6 +29,11 @@ namespace BooksCatalog.Infrastructure
         {
             get { return _context.Set<T>(); }
         }
+
+        /// <summary>
+        /// Returns ordered by name entities
+        /// </summary>
+        public abstract IQueryable<T> OrderByName();
 
         /// <summary>
         /// Find entity with specific id

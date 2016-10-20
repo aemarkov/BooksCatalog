@@ -8,6 +8,8 @@ namespace BooksCatalog
     /// </summary>
     public interface IUnitOfWork
     {
-        IRepository<T> GetRepository<T>() where T : class, IModel;
+        //IRepository<T> GetRepository<T>() where T : class, IModel;
+        IRepository<Book> BooksRepository { get; } 
+        IRepository<Category> CategoryRepository { get; } 
     }
 }

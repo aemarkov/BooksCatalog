@@ -125,3 +125,44 @@ textarea {
 {
     padding: 5px;
 }
+
+/*Id column*/
+.edit-table tr td:first-child
+{
+    width: 50px;
+}
+
+.edit-table tr td:nth-child(2)
+{
+    width: 70%;
+}
+
+/*
+    Form table
+*/
+
+.form-table
+{
+    width: 100%;
+}
+
+.form-table td
+{
+    padding: 5px;
+}
+
+.form-table tr td:first-child
+{
+    width: 100px;
+}
+
+input
+{
+    max-width: 100%;
+    width: 100%;
+}
+
+.validation-summary-errors ul
+{
+    color: #F00;
+}

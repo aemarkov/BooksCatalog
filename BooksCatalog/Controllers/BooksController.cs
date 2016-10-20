@@ -20,15 +20,15 @@ namespace BooksCatalog.Controllers
 
         public BooksController(IUnitOfWork uow, IMapper mapper)
         {
-            _booksRepository = uow.GetRepository<Book>();
-            _categoryRepository = uow.GetRepository<Category>();
+            _booksRepository = uow.BooksRepository;
+            _categoryRepository = uow.CategoryRepository;
             _mapper = mapper;
         }
 
         // GET all books
         public ActionResult Index()
         {
-            var books = _booksRepository.Entities.OrderBy(x=>x.Title).ToList();
+            var books = _booksRepository.OrderByName().ToList();
             var menuItems = GetCategoriesMenuItems();
 
             return View(new BooksListViewModel() {Books = books, MenuItems = menuItems});
@@ -50,7 +50,7 @@ namespace BooksCatalog.Controllers
         //Map list of the categories to the list of menu items
         private IList<SideMenuItemViewModel> GetCategoriesMenuItems()
         {
-            return _categoryRepository.Entities.OrderBy(x=>x.CategoryName).ToList().Select(x => _mapper.Map<Category,SideMenuItemViewModel>(x)).ToList();
+            return _categoryRepository.OrderByName().ToList().Select(x => _mapper.Map<Category,SideMenuItemViewModel>(x)).ToList();
         }
     }
 }

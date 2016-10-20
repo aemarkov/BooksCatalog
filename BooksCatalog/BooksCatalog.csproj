@@ -162,6 +162,8 @@
     </Compile>
     <Compile Include="Helpers\SidebarHelpers.cs" />
     <Compile Include="Infrastructure\BooksContext.cs" />
+    <Compile Include="Infrastructure\BooksRepository.cs" />
+    <Compile Include="Infrastructure\CategoriesRepository.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
@@ -230,6 +232,7 @@
     <Content Include="Views\CategoriesEdit\Index.cshtml" />
     <Content Include="Views\Shared\EditMenuPartial.cshtml" />
     <Content Include="Views\Shared\_EditLayout.cshtml" />
+    <Content Include="Views\Shared\BooksFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

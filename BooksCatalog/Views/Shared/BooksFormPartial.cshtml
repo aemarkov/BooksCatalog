@@ -1,0 +1,13 @@
+﻿@model BooksCatalog.Models.Book
+@Html.ValidationSummary()
+
+<table class="form-table">
+    <tr>
+        <td>@Html.LabelFor(x => x.Title)</td>
+        <td>@Html.EditorFor(x => x.Title)</td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.Category)</td>
+        <td>@Html.DropDownListFor(x => x.CategoryId, ViewBag.CategoriesSelectList as IEnumerable<SelectListItem>)</td>
+    </tr>
+</table>
