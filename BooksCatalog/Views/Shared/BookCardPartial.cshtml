@@ -2,12 +2,10 @@
 
 
 <div class="book-card">
-    <img class="book-card-image" src="@Url.Action("show","Images",new {id=Model.Id})" />
-    <div class="card-content">
-        <div class="book-card-title">
-            <b></b>
-            <div>@Model.Title</div>
-        </div>
-        <a class="btn btn-default" href="@Url.Action("Details","Books",new {bookId=Model.Id})">Подробнее</a>
+    <div class="book-card-image">
+        <img  src="@Url.Action("show","Images",new {id=Model.Id})" />
+    </div>
+    <div class="book-card-title">
+        @Model.Title
     </div>
 </div>
