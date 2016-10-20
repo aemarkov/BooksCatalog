@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BooksCatalog.Models
 {
@@ -20,6 +18,9 @@ namespace BooksCatalog.Models
         /// <summary>
         /// Name of the category
         /// </summary>
+        [Required]
+        [MaxLength(60,ErrorMessage = "Название категории должно быть не длиннее 30 символов")]
+        [Display(Name = "Название")]
         public string CategoryName { get; set; }
 
         /// <summary>

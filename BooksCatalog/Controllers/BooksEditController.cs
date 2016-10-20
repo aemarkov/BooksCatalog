@@ -22,13 +22,14 @@ namespace BooksCatalog.Controllers
             _categoryRepository = uow.CategoryRepository;
         }
 
-        // GET: Edit
+        // GET: View all books
         public ActionResult Index()
         {
             var books = _booksRepository.Entities.GroupBy(x => x.Category.CategoryName).OrderBy(x=>x.Key).ToDictionary(x=>x.Key, x=>x.OrderBy(y=>y.Title).ToList());
             return View(books);
         }
 
+        //Show form for create new book
         [HttpGet]
         public ActionResult Create()
         {
@@ -37,6 +38,7 @@ namespace BooksCatalog.Controllers
             return View();
         }
 
+        //Create new book
         [HttpPost]
         public ActionResult Create(Book book)
         {
@@ -50,6 +52,7 @@ namespace BooksCatalog.Controllers
             return View(book);
         }
 
+        //Show form for edit book
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -60,6 +63,7 @@ namespace BooksCatalog.Controllers
             return View(book);
         }
 
+        //Edit book
         [HttpPost]
         public ActionResult Edit(Book book)
         {
@@ -73,6 +77,7 @@ namespace BooksCatalog.Controllers
             return View(book);
         }
 
+        //Delete book
         public ActionResult Delete(int id)
         {
             var book = _booksRepository.GetById(id);

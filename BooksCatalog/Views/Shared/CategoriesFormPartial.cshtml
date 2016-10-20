@@ -1,0 +1,10 @@
+﻿@model BooksCatalog.Models.Category
+
+@Html.ValidationSummary()
+
+<table class="form-table">
+    <tr>
+        <td>@Html.LabelFor(x => x.CategoryName)</td>
+        <td>@Html.EditorFor(x => x.CategoryName)</td>
+    </tr>
+</table>

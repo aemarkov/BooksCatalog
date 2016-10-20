@@ -1,4 +1,6 @@
-﻿
+﻿@using System.Collections.Generic
+@using BooksCatalog.Models
+@model List<Category>
 @{
     ViewBag.Title = "Редактирование категорий";
     Layout = "~/Views/Shared/_EditLayout.cshtml";
@@ -6,3 +8,28 @@
 
 <h2>Категории</h2>
 
+@if (Model != null)
+{
+    <table class="edit-table">
+        <tr>
+            <td>Id</td>
+            <td>Название категории</td>
+            <td colspan="2">Управление</td>
+        </tr>
+
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Id</td>
+                    <td>@category.CategoryName</td>
+                    <td><a href="@Url.Action("Edit", new {id = category.Id})">Редактировать</a></td>
+                    <td><a href="@Url.Action("Delete", new {id = category.Id})">Удалить</a></td>
+            </tr>
+         }
+
+    </table>
+
+}
+
+<br />
+<a href="@Url.Action("Create")" class="btn btn-default">Создать</a>

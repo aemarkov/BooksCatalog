@@ -176,6 +176,10 @@
     <Compile Include="Migrations\201610192217287_make_book_name_field_larger.Designer.cs">
       <DependentUpon>201610192217287_make_book_name_field_larger.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610201751023_add_constraints_to_category_name.cs" />
+    <Compile Include="Migrations\201610201751023_add_constraints_to_category_name.Designer.cs">
+      <DependentUpon>201610201751023_add_constraints_to_category_name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />
@@ -233,6 +237,9 @@
     <Content Include="Views\Shared\EditMenuPartial.cshtml" />
     <Content Include="Views\Shared\_EditLayout.cshtml" />
     <Content Include="Views\Shared\BooksFormPartial.cshtml" />
+    <Content Include="Views\CategoriesEdit\Create.cshtml" />
+    <Content Include="Views\CategoriesEdit\Edit.cshtml" />
+    <Content Include="Views\Shared\CategoriesFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610192217287_make_book_name_field_larger.resx">
       <DependentUpon>201610192217287_make_book_name_field_larger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610201751023_add_constraints_to_category_name.resx">
+      <DependentUpon>201610201751023_add_constraints_to_category_name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,15 +1,16 @@
-﻿@model BooksCatalog.Models.Book
+﻿@model BooksCatalog.Models.Category
 @{
-    ViewBag.Title = "Создание книги";
+    ViewBag.Title = "Создание категории";
     Layout = "~/Views/Shared/_EditLayout.cshtml";
 }
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Create", "BooksEdit", FormMethod.Post))
+@using (Html.BeginForm("Create", "CategoriesEdit", FormMethod.Post))
 {
 
-    @Html.Partial("BooksFormPartial",Model)
+    @Html.Partial("CategoriesFormPartial",Model)
+
     <button type="submit" class="btn btn-primary">Создать</button>
     <a href="@Url.Action("Index")" class="btn btn-default">Отмена</a>
 }
