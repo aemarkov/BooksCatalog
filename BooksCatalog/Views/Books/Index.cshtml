@@ -1,7 +1,7 @@
 ﻿@using BooksCatalog.ViewModels
 @model BooksListViewModel
 @{
-    ViewBag.Title = "Index";
+    
 }
 
 @Html.Partial("SidebarPartial",new SideMenuViewModel() {MenuItems = Model.MenuItems, MenuTitle = "Категории"})
@@ -11,10 +11,12 @@
             @if (Model.CategoryName != null)
             {
                 @Model.CategoryName
+                ViewBag.Title = Model.CategoryName;
             }
             else
             {
                 <span>Все книги</span>
+                ViewBag.Title = "Все книги";
             }
         </h1>
 
