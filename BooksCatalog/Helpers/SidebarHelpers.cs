@@ -5,7 +5,7 @@ namespace BooksCatalog.Helpers
 {
     public static class SidebarHelpers
     {
-        public static MvcHtmlString MenuButton(this HtmlHelper htmlHelper, SideMenuViewModel viewModel)
+        public static MvcHtmlString MenuButton(this HtmlHelper htmlHelper, SideMenuItemViewModel viewModel)
         {
             var builder = new TagBuilder("a");
 

@@ -8,7 +8,8 @@ namespace BooksCatalog.ViewModels
     /// </summary>
     public class BooksListViewModel
     {
-        public IList<SideMenuViewModel> MenuItems { get; set; } 
+        public IList<SideMenuItemViewModel> MenuItems { get; set; } 
         public IList<Book> Books { get; set; }
+        public string CategoryName { get; set; }
     }
 }

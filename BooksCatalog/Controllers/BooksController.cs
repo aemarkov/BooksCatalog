@@ -9,6 +9,9 @@ using BooksCatalog.ViewModels;
 
 namespace BooksCatalog.Controllers
 {
+    /// <summary>
+    /// Controller for display list of books
+    /// </summary>
     public class BooksController : Controller
     {
         private readonly IRepository<Book> _booksRepository;
@@ -36,17 +39,18 @@ namespace BooksCatalog.Controllers
         public ActionResult Category(int id)
         {
             var books = _booksRepository.Entities.Where(x => x.CategoryId == id).ToList();
+            var category = _categoryRepository.GetById(id);
 
             //TODO: обработка ошибок отсутствия категории
             var menuItems = GetCategoriesMenuItems();
 
-            return View("Index", new BooksListViewModel() { Books = books, MenuItems = menuItems });
+            return View("Index", new BooksListViewModel() { Books = books, MenuItems = menuItems, CategoryName = category.CategoryName});
         }
 
         //Map list of the categories to the list of menu items
-        private IList<SideMenuViewModel> GetCategoriesMenuItems()
+        private IList<SideMenuItemViewModel> GetCategoriesMenuItems()
         {
-            return _categoryRepository.Entities.OrderBy(x=>x.CategoryName).ToList().Select(x => _mapper.Map<Category,SideMenuViewModel>(x)).ToList();
+            return _categoryRepository.Entities.OrderBy(x=>x.CategoryName).ToList().Select(x => _mapper.Map<Category,SideMenuItemViewModel>(x)).ToList();
         }
     }
 }

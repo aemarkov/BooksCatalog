@@ -1,14 +1,14 @@
 ﻿@using BooksCatalog.Helpers
-@model System.Collections.Generic.ICollection<BooksCatalog.ViewModels.SideMenuViewModel>
+@model BooksCatalog.ViewModels.SideMenuViewModel
 
 
 <div class="col-sm-3 col-md-2 sidebar">
     <h3 class="title">
-        Категории
+        @Model.MenuTitle
     </h3>
     @if (Model != null)
     {
-        foreach (var link in Model)
+        foreach (var link in Model.MenuItems)
         {
             @Html.MenuButton(link);
         }

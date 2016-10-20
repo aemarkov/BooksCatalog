@@ -154,6 +154,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\BooksEditController.cs" />
+    <Compile Include="Controllers\CategoriesEditController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -180,6 +182,7 @@
     <Compile Include="Utils\AutoMapperConfig.cs" />
     <Compile Include="Utils\NinjectDependencyResolver.cs" />
     <Compile Include="ViewModels\BooksListViewModel.cs" />
+    <Compile Include="ViewModels\SideMenuItemViewModel.cs" />
     <Compile Include="ViewModels\SideMenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,10 +221,15 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
-    <Content Include="Views\Books\Category.cshtml" />
     <Content Include="Views\Shared\SidbarPartial.cshtml" />
     <Content Include="Views\Shared\SidebarButtonPartial.cshtml" />
     <Content Include="Views\Shared\BookCardPartial.cshtml" />
+    <Content Include="Views\BooksEdit\Index.cshtml" />
+    <Content Include="Views\BooksEdit\Create.cshtml" />
+    <Content Include="Views\BooksEdit\Edit.cshtml" />
+    <Content Include="Views\CategoriesEdit\Index.cshtml" />
+    <Content Include="Views\Shared\EditMenuPartial.cshtml" />
+    <Content Include="Views\Shared\_EditLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

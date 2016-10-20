@@ -99,3 +99,29 @@ textarea {
 {
     width: 280px;
 }
+
+/*
+    Edit table
+*/
+
+.edit-table
+{
+    width: 100%;
+}
+
+.edit-table tr:first-child
+{
+    background-color: #C5CAE9;
+    height: 30px;
+    font-weight: 700;
+}
+
+.edit-table tr:nth-child(2n)
+{
+    background-color: #E8EAF6;
+}
+
+.edit-table td
+{
+    padding: 5px;
+}

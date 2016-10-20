@@ -1,0 +1,32 @@
+﻿@model System.Collections.Generic.IList<BooksCatalog.Models.Book>
+@{
+    ViewBag.Title = "Редактирование книг";
+    Layout = "~/Views/Shared/_EditLayout.cshtml";
+}
+
+<h2>Книги</h2>
+
+<table class="edit-table">
+    <tr>
+        <td>Id</td>
+        <td>Название</td>
+        <td colspan="2">Управление</td>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td><a href="@Url.Action("Edit", new {id = book.Id})">Редактировать</a></td>
+                <td><a href="@Url.Action("Delete", new {id = book.Id})">Удалить</a></td>
+            </tr>
+        }
+    }
+
+</table>
+
+<br/>
+<a href="@Url.Action("Create")" class="btn btn-default">Создать</a>
